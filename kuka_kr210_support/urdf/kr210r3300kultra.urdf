@@ -1,19 +1,20 @@
-<robot name="kr210_r3300_k_ultra">
+<robot
+  name="KR210_R3300_K_ultra">
   <link
     name="base_link">
     <inertial>
       <origin
-        xyz="-0.20775 0.00055823 0.12808"
+        xyz="-0.20775 0.12808 -0.00055823"
         rpy="0 0 0" />
       <mass
         value="120.88" />
       <inertia
         ixx="4.0664"
-        ixy="0.027244"
-        ixz="0.91423"
-        iyy="9.0263"
-        iyz="-0.010672"
-        izz="11.296" />
+        ixy="0.91423"
+        ixz="-0.027244"
+        iyy="11.296"
+        iyz="0.010672"
+        izz="9.0263" />
     </inertial>
     <visual>
       <origin
@@ -21,7 +22,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://kuka_kr210_k_ultra_support/meshes/base_link.STL" />
+          filename="package://kuka_kr210_support/meshes/kr210r3300kultra/base_link.STL" />
       </geometry>
       <material
         name="">
@@ -35,15 +36,15 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://kuka_kr210_k_ultra_support/meshes/base_link.STL" />
+          filename="package://kuka_kr210_support/meshes/kr210r3300kultra/base_link.STL" />
       </geometry>
     </collision>
   </link>
   <link
-    name="a1">
+    name="link_a1">
     <inertial>
       <origin
-        xyz="0.17966 -0.00038323 0.28193"
+        xyz="0.17966 -0.010383 0.28193"
         rpy="0 0 0" />
       <mass
         value="146.16" />
@@ -61,7 +62,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://kuka_kr210_k_ultra_support/meshes/a1.STL" />
+          filename="package://kuka_kr210_support/meshes/kr210r3300kultra/link_a1.STL" />
       </geometry>
       <material
         name="">
@@ -75,37 +76,42 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://kuka_kr210_k_ultra_support/meshes/a1.STL" />
+          filename="package://kuka_kr210_support/meshes/kr210r3300kultra/link_a1.STL" />
       </geometry>
     </collision>
   </link>
   <joint
-    name="a1"
-    type="continuous">
+    name="joint_a1"
+    type="revolute">
     <origin
-      xyz="0 0 0.214635731952951"
-      rpy="-6.12099546094239E-17 1.57900641784762E-18 0.0257908425371891" />
+      xyz="0 0.01 0.21464"
+      rpy="-6.123E-17 5.6221E-20 0.00091819" />
     <parent
       link="base_link" />
     <child
-      link="a1" />
+      link="link_a1" />
     <axis
-      xyz="0 0 1" />
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.2289"
+      upper="3.2289"
+      effort="0"
+      velocity="1.8326" />
   </joint>
   <link
-    name="a2">
+    name="link_a2">
     <inertial>
       <origin
-        xyz="0.0055344 -0.26455 0.54174"
+        xyz="0.0055355 -0.26456 0.54174"
         rpy="0 0 0" />
       <mass
         value="126.48" />
       <inertia
         ixx="27.784"
-        ixy="0.0076543"
-        ixz="-0.04554"
+        ixy="0.0076365"
+        ixz="-0.045473"
         iyy="27.097"
-        iyz="2.6237"
+        iyz="2.6236"
         izz="2.5095" />
     </inertial>
     <visual>
@@ -114,7 +120,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://kuka_kr210_k_ultra_support/meshes/a2.STL" />
+          filename="package://kuka_kr210_support/meshes/kr210r3300kultra/link_a2.STL" />
       </geometry>
       <material
         name="">
@@ -128,35 +134,40 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://kuka_kr210_k_ultra_support/meshes/a2.STL" />
+          filename="package://kuka_kr210_support/meshes/kr210r3300kultra/link_a2.STL" />
       </geometry>
     </collision>
   </link>
   <joint
-    name="a2"
-    type="continuous">
+    name="joint_a2"
+    type="revolute">
     <origin
-      xyz="0.749999999999672 0 0.375364268047466"
-      rpy="0 -0.30368126812384 -1.64338795598164E-15" />
+      xyz="0.75 -0.01 0.37536"
+      rpy="3.1416 1.5528 -3.1416" />
     <parent
-      link="a1" />
+      link="link_a1" />
     <child
-      link="a2" />
+      link="link_a2" />
     <axis
-      xyz="0 -1 0" />
+      xyz="0 1 0" />
+    <limit
+      lower="-2.0944"
+      upper="1.2217"
+      effort="0"
+      velocity="1.7628" />
   </joint>
   <link
-    name="a3">
+    name="link_a3">
     <inertial>
       <origin
-        xyz="0.23647 -0.033853 -0.014837"
+        xyz="0.23647 -0.043853 -0.014836"
         rpy="0 0 0" />
       <mass
         value="85.793" />
       <inertia
         ixx="2.3827"
         ixy="-0.12099"
-        ixz="0.23926"
+        ixz="0.23925"
         iyy="11.514"
         iyz="0.29194"
         izz="12.66" />
@@ -167,7 +178,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://kuka_kr210_k_ultra_support/meshes/a3.STL" />
+          filename="package://kuka_kr210_support/meshes/kr210r3300kultra/link_a3.STL" />
       </geometry>
       <material
         name="">
@@ -181,37 +192,42 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://kuka_kr210_k_ultra_support/meshes/a3.STL" />
+          filename="package://kuka_kr210_support/meshes/kr210r3300kultra/link_a3.STL" />
       </geometry>
     </collision>
   </link>
   <joint
-    name="a3"
-    type="continuous">
+    name="joint_a3"
+    type="revolute">
     <origin
-      xyz="0 0 1.34999999999928"
-      rpy="8.89335365055244E-19 0.222757009586188 -3.55734146022098E-18" />
+      xyz="0 0.01 1.35"
+      rpy="3.1416 -1.5469 -3.1416" />
     <parent
-      link="a2" />
+      link="link_a2" />
     <child
-      link="a3" />
+      link="link_a3" />
     <axis
-      xyz="0 -1 0" />
+      xyz="0 1 0" />
+    <limit
+      lower="-2.0944"
+      upper="2.7053"
+      effort="0"
+      velocity="1.8675" />
   </joint>
   <link
-    name="a4">
+    name="link_a4">
     <inertial>
       <origin
-        xyz="-0.00092569 0.13446 4.0374E-07"
+        xyz="-0.0009255 0.11699 3.1061E-07"
         rpy="0 0 0" />
       <mass
-        value="5.1131" />
+        value="5.113" />
       <inertia
-        ixx="0.062379"
-        ixy="0.0009851"
-        ixz="6.9632E-08"
+        ixx="0.062378"
+        ixy="0.00098507"
+        ixz="5.8079E-08"
         iyy="0.024696"
-        iyz="-1.0902E-07"
+        iyz="-1.69E-07"
         izz="0.061907" />
     </inertial>
     <visual>
@@ -220,7 +236,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://kuka_kr210_k_ultra_support/meshes/a4.STL" />
+          filename="package://kuka_kr210_support/meshes/kr210r3300kultra/link_a4.STL" />
       </geometry>
       <material
         name="">
@@ -234,37 +250,42 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://kuka_kr210_k_ultra_support/meshes/a4.STL" />
+          filename="package://kuka_kr210_support/meshes/kr210r3300kultra/link_a4.STL" />
       </geometry>
     </collision>
   </link>
   <joint
-    name="a4"
-    type="continuous">
+    name="joint_a4"
+    type="revolute">
     <origin
-      xyz="0.903648387390284 0 -0.0410000000002515"
-      rpy="2.803833951231E-17 -0.0926032509080979 -1.57079632679491" />
+      xyz="0.92112 -0.01 -0.041"
+      rpy="3.9824E-19 -0.15463 -1.5708" />
     <parent
-      link="a3" />
+      link="link_a3" />
     <child
-      link="a4" />
+      link="link_a4" />
     <axis
-      xyz="0 1 0" />
+      xyz="0 -1 0" />
+    <limit
+      lower="-6.1087"
+      upper="6.1087"
+      effort="0"
+      velocity="2.3736" />
   </joint>
   <link
-    name="a5">
+    name="link_a5">
     <inertial>
       <origin
-        xyz="0.054314 0.037833 -2.6749E-05"
+        xyz="0.054314 0.027833 -2.6352E-05"
         rpy="0 0 0" />
       <mass
         value="11.495" />
       <inertia
         ixx="0.11957"
         ixy="0.027139"
-        ixz="1.2206E-05"
+        ixz="1.2241E-05"
         iyy="0.11876"
-        iyz="2.1787E-05"
+        iyz="2.1645E-05"
         izz="0.17595" />
     </inertial>
     <visual>
@@ -273,7 +294,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://kuka_kr210_k_ultra_support/meshes/a5.STL" />
+          filename="package://kuka_kr210_support/meshes/kr210r3300kultra/link_a5.STL" />
       </geometry>
       <material
         name="">
@@ -287,28 +308,33 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://kuka_kr210_k_ultra_support/meshes/a5.STL" />
+          filename="package://kuka_kr210_support/meshes/kr210r3300kultra/link_a5.STL" />
       </geometry>
     </collision>
   </link>
   <joint
-    name="a5"
-    type="continuous">
+    name="joint_a5"
+    type="revolute">
     <origin
-      xyz="0 0.296351612607003 0"
-      rpy="-3.14159265358979 1.49089854131126 -1.5707963267949" />
+      xyz="-0.01 0.27888 0"
+      rpy="-8.0493E-16 0.0059619 1.5708" />
     <parent
-      link="a4" />
+      link="link_a4" />
     <child
-      link="a5" />
+      link="link_a5" />
     <axis
-      xyz="0 -1 0" />
+      xyz="0 1 0" />
+    <limit
+      lower="-2.138"
+      upper="2.138"
+      effort="0"
+      velocity="2.2515" />
   </joint>
   <link
-    name="a6">
+    name="link_a6">
     <inertial>
       <origin
-        xyz="0.020246 -1.2405E-05 3.8671E-05"
+        xyz="0.021126 -0.010012 3.8671E-05"
         rpy="0 0 0" />
       <mass
         value="0.64081" />
@@ -317,7 +343,7 @@
         ixy="-1.5728E-07"
         ixz="9.6859E-08"
         iyy="0.0019693"
-        iyz="3.4977E-08"
+        iyz="3.5182E-08"
         izz="0.0019665" />
     </inertial>
     <visual>
@@ -326,7 +352,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://kuka_kr210_k_ultra_support/meshes/a6.STL" />
+          filename="package://kuka_kr210_support/meshes/kr210r3300kultra/link_a6.STL" />
       </geometry>
       <material
         name="">
@@ -340,21 +366,26 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://kuka_kr210_k_ultra_support/meshes/a6.STL" />
+          filename="package://kuka_kr210_support/meshes/kr210r3300kultra/link_a6.STL" />
       </geometry>
     </collision>
   </link>
   <joint
-    name="a6"
-    type="continuous">
+    name="joint_a6"
+    type="revolute">
     <origin
-      xyz="0.205879405095406 0 0"
-      rpy="-0.294130308640664 1.85918988537814E-15 5.87030424270552E-15" />
+      xyz="0.205 -6.1532E-05 0.0011076"
+      rpy="0.11099 0 0" />
     <parent
-      link="a5" />
+      link="link_a5" />
     <child
-      link="a6" />
+      link="link_a6" />
     <axis
       xyz="-1 0 0" />
+    <limit
+      lower="-6.1087"
+      upper="6.1087"
+      effort="0"
+      velocity="3.5954" />
   </joint>
 </robot>
