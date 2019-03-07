@@ -12,6 +12,7 @@
     <rosparam file="$(find kuka_eki_hw_interface)/config/hardware_controllers.yaml" command="load"/>
     <!-- Load standard kuka controller joint names from YAML file to parameter server -->
     <rosparam file="$(find kuka_eki_hw_interface)/config/controller_joint_names.yaml" command="load"/>
+    <param name="robot_description" textfile="$(find kuka_kr210_support)/urdf/kr210r3300kultra.urdf"/>
 
     <!-- Load controllers -->
     <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen"
